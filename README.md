@@ -9,7 +9,8 @@ we don't need to write in order to learn and we can make process of learning fas
 
 ## 🔗 Live Demo
 ![App Screenshot](/assets/hiragana_ex.png)
-[**Click here to start practicing**](https://mahoraga777.github.io/Learn-Japanese/)
+
+[***Click here to start practicing***](https://mahoraga777.github.io/Learn-Japanese/)
 
 ## 📂 Project Architecture
 I designed the file structure to be modular so new features can be added without breaking the core application.
