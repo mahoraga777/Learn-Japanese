@@ -164,7 +164,7 @@ inputField.addEventListener('keydown', (e) => {
 
 // Load next question on Tab key (if button is visible)
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab' && nextBtn.style.display !== 'none') {
+    if (e.key === 'Enter' && nextBtn.style.display !== 'none') {
         e.preventDefault(); // Stop normal tab behavior
         loadQuestion();
     }
