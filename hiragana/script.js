@@ -155,20 +155,19 @@ function checkAnswer() {
 
 // 5. Event Listeners
 
-// Check answer on Enter key
+// Check answer on Enter key; if a question has already been checked (next button visible), Enter will load the next question instead
 inputField.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        checkAnswer();
+        e.preventDefault();
+        if (nextBtn.style.display !== 'none') {
+            loadQuestion();
+        } else {
+            checkAnswer();
+        }
     }
 });
 
-// Load next question on Tab key (if button is visible)
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && nextBtn.style.display !== 'none') {
-        e.preventDefault(); // Stop normal tab behavior
-        loadQuestion();
-    }
-});
+// Note: Tab-to-next was removed per request so Enter is used to advance after an answer
 
 // Load next question on Button Click
 nextBtn.addEventListener('click', loadQuestion);
