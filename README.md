@@ -8,7 +8,7 @@ I built this because I believe **Active Recall** (seeing a character and typing 
 we don't need to write in order to learn and we can make process of learning fast.My main gole is to be able to watch anime without subtitles so  
 
 ## 🔗 Live Demo
-##[***Click here to start practicing***](https://mahoraga777.github.io/Learn-Japanese/)
+## [***Click here to start practicing***](https://mahoraga777.github.io/Learn-Japanese/)
 
 ![App Screenshot](/assets/hiragana_ex.png)
 
