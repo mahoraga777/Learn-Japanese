@@ -112,6 +112,8 @@ const charDisplay = document.getElementById('character-display');
 const inputField = document.getElementById('user-input');
 const feedbackMsg = document.getElementById('feedback-msg');
 const nextBtn = document.getElementById('next-btn');
+let isMuted = false; 
+const muteBtn = document.getElementById('mute-btn');
 
 // 3. Function to load a question
 function loadQuestion() {
@@ -129,6 +131,19 @@ function loadQuestion() {
 
     feedbackMsg.innerText = '';
     nextBtn.style.display = 'none';
+
+}
+// New function to play local mp3 files
+function playAudio(romaji) {
+    if (isMuted) return;
+
+    // This looks for a file named "a.mp3", "ka.mp3" inside the audio folder
+    const audio = new Audio(`../assets/audio/${romaji}.mp3`);
+    
+    // Play it and catch errors (in case file is missing)
+    audio.play().catch(error => {
+        console.log("Audio file not found:", error);
+    });
 }
 
 // 4. Function to check answer
@@ -137,6 +152,8 @@ function checkAnswer() {
     if (!userVal) return; // Do nothing if empty
 
     inputField.disabled = true; // Lock input
+    
+    playAudio(currentQuestion.answers[0]);
 
     if (currentQuestion.answers.includes(userVal)) {
         // Correct
